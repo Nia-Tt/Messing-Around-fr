@@ -80,5 +80,44 @@ switch(dayNumber){
 alert("Today is " + dayName +"!");
 */
 //Prompt/Activity 2
+/*
 let userName = prompt("Enter Name");
 document.getElementById("user-name").textContent = "Welcome " + userName + " to our website";
+*/
+
+//8.5.25
+function randomizeColor(){
+  let randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = randomColor;
+}
+
+let randomButton = document.getElementById('random-color');
+randomButton.addEventListener('click', randomizeColor);
+
+
+function lightMode() {
+  document.body.style.backgroundColor = 'white';
+  document.body.style.color = 'black';
+  let button = document.getElementById('mode');
+  button.textContent = "Dark Mode";
+}
+
+function darkMode() {
+  document.body.style.backgroundColor = 'black';
+  document.body.style.color = 'white';
+  let button = document.getElementById('mode');
+  button.textContent = "Light Mode";
+}
+
+function toggleMode(){
+  let button = document.getElementById('mode');
+  if(button.textContent == "Dark Mode"){
+    darkMode();
+  } else{
+    lightMode();
+  }
+}
+
+let modeButton = document.getElementById('mode');
+modeButton.addEventListener('click', toggleMode);
+
